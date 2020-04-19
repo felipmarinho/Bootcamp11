@@ -5,11 +5,6 @@ Para iniciar o projeto é necessário fazer a instalação das libs. utilize o c
 yarn install
 ```
 
-Para executar os teste execute o comando:
-```
-yarn test
-```
-
 Para iniciar a aplicação execute o comando:
 ```
 yarn test
