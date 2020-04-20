@@ -7,9 +7,11 @@ import Header from './components/Header';
 function App() {
 	const [projects, setProjects] = useState([]);
 
-	function handleAddProject() {
-		setProjects([...projects, `Novo projeto ${Date.now()}`]);
-		console.log('Projects', projects);
+	async function handleAddProject() {
+		const title = `Novo projeto ${Date.now()}`;
+		const owner = 'Felipe Marinho';
+		const response = await api.post('projects', { title, owner});
+		setProjects([...projects, response.data]);
 	}
 
 	useEffect(() => {
