@@ -24,7 +24,10 @@ appointmentRouter.post('/', (request, response) => {
       .json({ message: 'This appointment is already bo doked' });
   }
 
-  const appointment = appointmentsRepository.create(provider, parsedDate);
+  const appointment = appointmentsRepository.create({
+    provider,
+    date: parsedDate,
+  });
 
   return response.json(appointment);
 });
